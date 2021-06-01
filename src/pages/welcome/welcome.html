@@ -1,0 +1,82 @@
+
+<ion-content padding class="page-welcome">
+    <ion-slides pager>
+
+        <ion-slide>
+            <h1>Welcome to</h1>
+            <img src="assets/imgs/logo.png"/>
+            <p class="lead">How do you Wittr?</p>
+            <p>You just Wittr.</p>
+        </ion-slide>
+
+        <ion-slide>
+            <h1>It's just a bit of fun.</h1>
+            <p>
+                With <b>Wittr</b>, you're able to see nearby Wittertainees who have also installed the app.
+            </p>
+
+            <h1><ion-icon name="map" style="font-size:48px;"></ion-icon></h1>
+        </ion-slide>
+
+        <ion-slide>
+
+
+
+            <ion-row>
+                <ion-col>
+                    <p class="lead">This is you.</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <img src="assets/imgs/me.png"/>
+                </ion-col>
+            </ion-row>
+            <div class="row">
+                <div class="col">
+                    <p>And this is another Wittertainee.</p>
+                </div>
+                <div class="col">
+                    <img src="assets/imgs/marker.png"/>
+                </div>
+            </div>
+
+        </ion-slide>
+
+        <ion-slide>
+            <h1><ion-icon name="compass" style="font-size:48px;"></ion-icon></h1>
+            <p class="lead">
+                So everyone knows exactly where I am?! <b>NO!</b>
+            </p>
+            <p><b>Wittr</b> fuzzes up your location before sending it off, you can make it more, or less fuzzy from the Settings menu.</p>
+        </ion-slide>
+
+        <ion-slide>
+            <p class="lead">Finally...</p>
+            <ion-card>
+                <ion-card-content>
+                    I hereby declare that I utterly completely understand that the <b>Wittr</b> app is 100% totes nothing to do with the <b>BBC</b> yeah?
+                </ion-card-content>
+
+                <ion-item>
+                    <ion-label>I understand</ion-label>
+                    <ion-checkbox [(ngModel)]="iUnderstand"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+
+                </ion-item>
+                <ion-item>
+                    <button default [disabled]="!iUnderstand" block (click)="gotoMap()" outline ion-button>Take me to the map!</button>
+                </ion-item>
+            </ion-card>
+
+            <br/><br/><br/>
+
+
+        </ion-slide>
+
+
+
+    </ion-slides>
+</ion-content>
+

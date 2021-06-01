@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Wittr Fund</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="page-fund wittr-back">
+
+
+
+    <ion-row>
+        <ion-col text-center>
+            <img [src]="imgSrc" (click)="goFund()"/>
+        </ion-col>
+    </ion-row>
+
+    <ion-card class="wittr-balance">
+        <ion-card-content>
+            <ion-row>
+                <ion-col width-25>
+                    <img src="assets/imgs/wittcoin-small.png"/>
+                </ion-col>
+                <ion-col>
+                    {{funding}}
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            WittCoins
+        </ion-card-header>
+        <ion-card-content>
+            Everyone knows that this app makes a huge amount of money, how though? With the button above obviously. Each tap generates 1 WittCoin.
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

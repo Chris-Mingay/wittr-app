@@ -1,0 +1,25 @@
+.page-welcome {
+  background-color: map_get($colors,'primary');
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+
+  p.lead {
+    font-size: 24px;
+  }
+
+  .goto-map {
+    background-color: white;
+    border-color: white;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: white;
+  }
+
+}

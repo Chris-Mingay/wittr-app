@@ -1,0 +1,23 @@
+.page-demographics {
+
+  color: #1c356a;
+
+  .demographic-toggle{
+    margin-bottom: 5px;
+  }
+
+  .demographic-title, .demographic-description {
+    text-align: center;
+  }
+
+  .demographic-description {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+
+  .demographic-toggle .toggle-icon {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+}

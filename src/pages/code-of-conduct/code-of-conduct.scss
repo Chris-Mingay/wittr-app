@@ -1,0 +1,15 @@
+.page-code-of-conduct {
+  ion-item {
+    font-size: 1.4rem;
+  }
+  .lead {
+    font-size: 1.6rem;
+    font-weight:bold;
+    margin-right: 5px;
+  }
+
+  ion-card {
+    border-top: 3px solid map_get($colors,'primary');
+  }
+
+}

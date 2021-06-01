@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Settings</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="page-settings wittr-back">
+
+    <ion-card>
+
+        <ion-item>
+            <ion-label>
+                Can Submit Position
+            </ion-label>
+            <ion-toggle #s1 [(ngModel)]="wittrSettings.canSubmit" (ngModelChange)="wittrSettings.SaveCanSubmit()"></ion-toggle>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                Fuzz amount
+            </ion-label>
+            <ion-select [(ngModel)]="wittrSettings.fuzzDistance" (ngModelChange)="wittrSettings.SaveFuzzDistance()">
+                <ion-option value="0.0">Your exact location</ion-option>
+                <ion-option value="0.001">Within 50ish metres</ion-option>
+                <ion-option value="0.01">Within 500ish metres</ion-option>
+                <ion-option value="0.1">5Kish</ion-option>
+                <ion-option value="1">50kish</ion-option>
+                <ion-option value="2">100kish</ion-option>
+                <ion-option value="4">400kish</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                Are you a Battenburg?
+            </ion-label>
+            <ion-toggle #s1 [(ngModel)]="wittrSettings.battenburg" (ngModelChange)="wittrSettings.SaveBattenburg()"></ion-toggle>
+        </ion-item>
+    </ion-card>
+
+</ion-content>

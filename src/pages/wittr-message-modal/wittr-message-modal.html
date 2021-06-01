@@ -1,0 +1,42 @@
+
+<ion-header>
+    <ion-toolbar primary>
+
+        <ion-buttons end>
+            <button (click)="dismiss()">
+                <ion-icon name="md-close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="wittr-message-modal" padding>
+
+    <ion-list no-lines no-border>
+        <ion-item text-wrap>
+            You get {{characterLimit}} whole characters to play with you lucky thing Use them wisely! Other people will be able to see this if they click your map marker. {{lengthOK}}
+        </ion-item>
+        <ion-item>
+            <ion-textarea rows="6"  #t1 (input)="updateCharacterCount(t1)" [(ngModel)]="message"></ion-textarea>
+        </ion-item>
+        <ion-item>
+
+            <span item-left [class.over-length]="!lengthOK">{{characterCount}}/{{characterLimit}}</span>
+
+            <button default class="button" item-right secondary *ngIf="goodSend" (click)="dismiss()">
+                <ion-icon name="checkmark"></ion-icon>
+                Close
+            </button>
+
+            <button *ngIf="!goodSend"  default class="button" item-right [class.button-danger]="!lengthOK" [class.button-primary]="lengthOK" [disabled]="!lengthOK" (click)="updateMessage()">
+                <ion-icon name="create"></ion-icon>
+                {{ lengthOK ? 'Update' : 'Sort it'}}
+            </button>
+        </ion-item>
+        <ion-item text-wrap>
+            <small><i>Remember, others can see this message, so don't be rude and don't give out personal information. I know you wouldn't, but rather safe than sorry.</i></small>
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Podcast</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="podcast-page wittr-back">
+
+    <ion-refresher (ionRefresh)="refresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div *ngIf="podcastDataReady">
+
+        <ion-card class="podcast-head">
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="{{podcastData.header_image}}"/>
+                </ion-avatar>
+                <h2>{{podcastData.title}}</h2>
+                <p>Latest: {{podcastData.podcasts[0].pubDate}}</p>
+            </ion-item>
+            <ion-card-content>
+                {{podcastData.description}}
+            </ion-card-content>
+
+        </ion-card>
+
+        <ion-card *ngFor="let podcast of podcastData.podcasts; let i = index;" [ngClass]="{'not-first': (i >0 )}">
+            <ion-card-content>
+                <ion-card-title>{{podcast.title}}</ion-card-title>
+                <p>{{podcast.pubDate}}</p>
+                <p>{{podcast.description}}</p>
+
+            </ion-card-content>
+
+            <ion-list no-lines>
+                <ion-item class="footer">
+                    <button (click)="play(podcast)" ion-button [large]="i == 0" color="priamry" item-right><ion-icon name="play"></ion-icon></button>
+                </ion-item>
+            </ion-list>
+        </ion-card>
+
+    </div>
+
+</ion-content>
+
+<ion-footer *ngIf="wittrApi.playing">
+    <ion-toolbar>
+        {{wittrApi.playingItem.title}}<br/><small>{{wittrApi.currentPosition | podcastTime }} / {{wittrApi.duration | podcastTime}}</small>
+        <ion-buttons end>
+            <button (click)="wittrApi.toggle()" icon-only ion-button small class="button button-clear" item-right><ion-icon name="{{wittrApi.paused ? 'play' : 'pause'}}"></ion-icon></button>
+            <button (click)="wittrApi.stop()" icon-only  ion-button small class="button button-clear" item-right><ion-icon name="square"></ion-icon></button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>
