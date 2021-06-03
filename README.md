@@ -11,16 +11,6 @@ An email request was read out in the Feb 12 2016 Kermode and Mayo Film Review po
  - Ionic Framework - http://ionicframework.com/ - (and all of it's documented requirements)
  - CMDER - http://cmder.net/ - (I use it for linux like commands in Windows, and it's so much nicer to use than cmd.exe)# Wittr App
 
-## What is it?
-
-An app showing you if there are any other Wittertainees leaving close to you.
-
-An email request was read out in the Feb 12 2016 Kermode and Mayo Film Review podcast, seeing if there was an app to connect fellow listeners (well Colonial Commoners, but I'll allow British Empire citizens as well). So here we are! It's very simple, not entirely accurate (on purpose.... for peace of mind), contains the code of conduct and is just a bit of fun.
-
-## Requirements
-
- - Ionic Framework - http://ionicframework.com/ - (and all of it's documented requirements)
-
 ## Installation
 
 On Windows, use CMDER to run the following commands. On Linux/OSX alter as required and use a standard terminal window
